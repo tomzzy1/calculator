@@ -1,24 +1,20 @@
 #pragma once
 #include "op_node.h"
 
-class parentheses_node :
-	public op_node
+class Parentheses_node :
+	public Op_node
 {
 public:
-	parentheses_node();
-	~parentheses_node();
-	char get_type() const override
+	Parentheses_node() = default;
+	~Parentheses_node() = default;
+	Node_type get_type() const override
 	{
-		return '(';
+		return Node_type::parentheses;
 	}
-	void set_left_child(std::unique_ptr<node_base> lfc) override {};
+	size_t get_priority() const override { return 0; };
 
-	void set_right_child(std::unique_ptr<node_base> rfc) override {};
+	double calculate() const override { return 0; };
 
-	virtual void set_child(std::unique_ptr<node_base> ch) override {};
-
-	virtual size_t get_priority() const override { return 0; };
-
-	double calculate() override { return 0; };
+	void set_child(std::unique_ptr<Node_base> lhs, std::unique_ptr<Node_base> rhs = nullptr) {}
 };
 

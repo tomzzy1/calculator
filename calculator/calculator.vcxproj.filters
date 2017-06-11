@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
     <Filter Include="Header Files">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
@@ -13,87 +9,57 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{eb2d53ee-18bc-4089-9023-a313bbf1e798}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\node">
+      <UniqueIdentifier>{f6abb67a-bd03-4099-9b74-d1d8d122075c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\node\binary_node">
+      <UniqueIdentifier>{a3b7387a-b2f5-4b8c-bc40-bc0756f655b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\node\unary_node">
+      <UniqueIdentifier>{7ccf5981-f7dc-41a2-afcf-e2d0d4ed5929}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="node_base.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="binary_op_node.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="unary_op_node.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="plus_node.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="minus_node.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="multiply_node.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="divide_node.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="pow_node.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="number_node.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="op_node.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <ClInclude Include="binary_op_node.h">
+      <Filter>Header Files\node\binary_node</Filter>
+    </ClInclude>
+    <ClInclude Include="unary_op_node.h">
+      <Filter>Header Files\node\unary_node</Filter>
+    </ClInclude>
+    <ClInclude Include="binary_op.h">
+      <Filter>Header Files\node\binary_node</Filter>
+    </ClInclude>
+    <ClInclude Include="unary_op.h">
+      <Filter>Header Files\node\unary_node</Filter>
+    </ClInclude>
+    <ClInclude Include="parentheses_node.h">
+      <Filter>Header Files\node</Filter>
+    </ClInclude>
+    <ClInclude Include="node_base.h">
+      <Filter>Header Files\node</Filter>
+    </ClInclude>
+    <ClInclude Include="node_type.h">
+      <Filter>Header Files\node</Filter>
+    </ClInclude>
+    <ClInclude Include="number_node.h">
+      <Filter>Header Files\node</Filter>
+    </ClInclude>
+    <ClInclude Include="op_node.h">
+      <Filter>Header Files\node</Filter>
+    </ClInclude>
+    <ClInclude Include="Calculator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="parentheses_node.cpp">
+    <ClCompile Include="Calculator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="unary_minus.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="node_base.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="binary_op_node.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="plus_node.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="minus_node.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="multiply_node.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="divide_node.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="pow_node.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="number_node.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="op_node.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="parentheses_node.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="unary_op_node.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="unary_minus.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="utility_node.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

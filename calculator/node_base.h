@@ -1,15 +1,14 @@
 #pragma once
 #include <memory>
+#include "node_type.h"
 
-class node_base
+class Node_base
 {
 public:
-	node_base();
-	virtual ~node_base();
-	virtual char get_type() const = 0;
-	virtual void set_left_child(std::unique_ptr<node_base> lfc) = 0;
-	virtual void set_right_child(std::unique_ptr<node_base> rfc) = 0;
-	virtual void set_child(std::unique_ptr<node_base> ch) = 0;
-	virtual double calculate() = 0;
+	Node_base() = default;
+	virtual ~Node_base() = default;
+	virtual Node_type get_type() const = 0;
+	virtual void set_child(std::unique_ptr<Node_base> lhs, std::unique_ptr<Node_base> rhs = nullptr) = 0;
+	virtual double calculate() const = 0;
 };
 

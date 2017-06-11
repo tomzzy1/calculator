@@ -2,24 +2,31 @@
 #include "op_node.h"
 #include <memory>
 
+template<typename Fn> 
 class unary_op_node :
-	public op_node
+	public Op_node
 {
 public:
-	unary_op_node();
-	~unary_op_node();
-	void set_child(std::unique_ptr<node_base> ch)
+	unary_op_node() = default;
+	~unary_op_node() = default;
+	void set_child(std::unique_ptr<Node_base> lhs, std::unique_ptr<Node_base> rhs = nullptr) override
 	{
-		child = std::move(ch);
+		child = std::move(lhs);
 	}
-	char get_type() const override
+	Node_type get_type() const override
 	{
-		return 'u';
+		return Node_type::unary;
 	}
-	void set_left_child(std::unique_ptr<node_base> lfc) override {};
-
-	void set_right_child(std::unique_ptr<node_base> rfc) override {};
-protected:
-	std::unique_ptr<node_base> child;
+	size_t get_priority() const override
+	{
+		return Fn::priority;
+	}
+	double calculate() const override
+	{
+		return fn(child->calculate());
+	}
+private:
+	std::unique_ptr<Node_base> child;
+	Fn fn;
 };
 

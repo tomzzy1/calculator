@@ -2,27 +2,33 @@
 #include "op_node.h"
 #include <memory>
 
+template<typename Fn>
 class binary_op_node :
-	public op_node
+	public Op_node
 {
 public:
-	binary_op_node();
-	~binary_op_node();
-	void set_left_child(std::unique_ptr<node_base> lfc) override
+	binary_op_node() = default;
+	~binary_op_node() = default;
+	void set_child(std::unique_ptr<Node_base> lhs, std::unique_ptr<Node_base> rhs = nullptr) override
 	{
-		left = std::move(lfc);
+		left = std::move(lhs);
+		right = std::move(rhs);
 	}
-	void set_right_child(std::unique_ptr<node_base> rfc) override
+	Node_type get_type() const override
 	{
-		right = std::move(rfc);
+		return Node_type::binary;
 	}
-	virtual void set_child(std::unique_ptr<node_base> ch) override {};
-	char get_type() const override
+	double calculate() const override
 	{
-		return 'b';
+		return fn(left->calculate(), right->calculate());
 	}
-protected:
-	std::unique_ptr<node_base> left;
-	std::unique_ptr<node_base> right;
+	size_t get_priority() const override
+	{
+		return Fn::priority;
+	}
+private:
+	std::unique_ptr<Node_base> left;
+	std::unique_ptr<Node_base> right;
+	Fn fn;
 };
 
