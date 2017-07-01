@@ -6,8 +6,8 @@ namespace op
 
 	struct plus
 	{
-		static const int priority = 1;
-		double operator()(const double& lhs,const double& rhs) const
+		static constexpr int priority = 1;
+		double operator()(double lhs, double rhs) const
 		{
 			return lhs + rhs;
 		}
@@ -15,8 +15,8 @@ namespace op
 
 	struct minus
 	{
-		static const int priority = 1;
-		double operator()(const double& lhs,const double& rhs) const
+		static constexpr int priority = 1;
+		double operator()(double lhs, double rhs) const
 		{
 			return lhs - rhs;
 		}
@@ -24,8 +24,8 @@ namespace op
 
 	struct multiply
 	{
-		static const int priority = 2;
-		double operator()(const double& lhs,const double& rhs) const
+		static constexpr int priority = 2;
+		double operator()(double lhs, double rhs) const
 		{
 			return lhs * rhs;
 		}
@@ -33,8 +33,8 @@ namespace op
 
 	struct divide
 	{
-		static const int priority = 2;
-		double operator()(const double& lhs,const double& rhs) const
+		static constexpr int priority = 2;
+		double operator()(double lhs, double rhs) const
 		{
 			return lhs / rhs;
 		}
@@ -42,8 +42,8 @@ namespace op
 
 	struct pow
 	{
-		static const int priority = 3;
-		double operator()(const double& lhs,const double& rhs) const
+		static constexpr int priority = 3;
+		double operator()(double lhs, double rhs) const
 		{
 			return std::pow(lhs, rhs);
 		}

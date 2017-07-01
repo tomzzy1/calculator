@@ -5,8 +5,8 @@ namespace op
 { 
 	struct negative
 	{
-		static const int priority = 3;
-		double operator()(const double& val) const
+		static constexpr int priority = 3;
+		double operator()(double val) const
 		{
 			return -val;
 		}
@@ -14,8 +14,8 @@ namespace op
 
 	struct sin
 	{
-		static const int priority = 3;
-		double operator()(const double& val) const 
+		static constexpr int priority = 3;
+		double operator()(double val) const 
 		{
 			return std::sin(val);
 		}
@@ -23,8 +23,8 @@ namespace op
 
 	struct sqrt
 	{
-		static const int priority = 3;
-		double operator()(const double& val) const 
+		static constexpr int priority = 3;
+		double operator()(double val) const 
 		{
 			return std::sqrt(val);
 		}
